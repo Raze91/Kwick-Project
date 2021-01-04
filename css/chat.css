@@ -1,6 +1,23 @@
 body {
     margin: 0;
-    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+.ctnr {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.btn-ctnr button {
+    height: 40px;
+    background-color: #444753;
+    color: white;
+    border: none;
+    margin: auto 0;
 }
 
 main {
@@ -9,14 +26,15 @@ main {
 }
 
 section {
-    width: 80%;
+    width: 80%
 }
 
 section div {
     border: 1px solid black;
-    background-color: steelblue;
+    background-color: skyblue;
     border-radius: 5px;
-    padding: 10px;
+    margin: 10px;
+    width: fit-content;
 }
 
 section div h2, section div p {
@@ -29,15 +47,25 @@ section div h2 {
 }
 
 aside {
-    width: 20%;
+    width: 25%;
     border: 1px solid black;
-    background-color: steelblue;
-    padding: 10px;
+    border-radius: 5px;
+    background-color: #444753;
+    margin: 10px 0;
 }
 
 aside p {
-    width: 50%;
-    margin: 20px auto
+    width: 80%;
+    color: white;
+    margin: 20px auto;
+    font-size: 20px;
 }
 
-
+#message {
+    padding: 12px 20px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 90%;
+}

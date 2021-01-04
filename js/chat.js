@@ -8,7 +8,7 @@ $.ajax({
         res.result.talk.map((msg) => {
             $("section").append(`
             <div>
-                <h2>${msg.user_name}</h2>
+                <p>${msg.user_name}</p>
                 <p>${msg.content}</p>
             </div>`
             )
@@ -23,8 +23,8 @@ $.ajax({
         console.log("logged users : ", res)
 
         res.result.user.map((user) => {
-            $("aside").append(`
-            <h2>${user}</h2>
+            $(".ctnr").append(`
+            <p>${user}</p>
             `)
         })
     })
