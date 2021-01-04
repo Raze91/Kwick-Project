@@ -12,9 +12,13 @@ $("#submit").on("click", function (e) {
         .then((res) => {
             console.log(res)
 
-            if(res.result.status === "failure") {
+            if (res.result.status === "failure") {
                 alert(res.result.message);
             } else {
+
+                sessionStorage.setItem("id", res.result.id);
+                sessionStorage.setItem("token", res.result.token);
+
                 window.location.replace("chat.html")
             }
         })
