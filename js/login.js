@@ -14,6 +14,8 @@ $("#submit").on("click", function (e) {
 
             if(res.result.status === "failure") {
                 alert(res.result.message);
+            } else {
+                window.location.replace("chat.html")
             }
         })
 })
