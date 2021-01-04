@@ -1,5 +1,4 @@
-
-$("#submit").on("click", function (e) {
+$("form").on("submit", function (e) {
     e.preventDefault();
 
     const user = $("#user").val();
