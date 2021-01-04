@@ -28,3 +28,22 @@ $.ajax({
             `)
         })
     })
+
+$("#logout").on("click", function (e) {
+    e.preventDefault();
+
+    $.ajax({
+        url: `http://greenvelvet.alwaysdata.net/kwick/api/logout/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}`,
+        dataType: "json"
+    })
+        .then((res) => {
+            console.log(res);
+
+            if(res.result.status === "failure") {
+                alert(res.result.message);
+            } else {
+                window.location.href = "../index.html";
+            }
+        })
+
+})

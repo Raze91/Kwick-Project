@@ -47,7 +47,7 @@ aside {
     flex: 1;
 }
 
-.btn-ctnr button {
+#logout {
     height: 40px;
     background-color: #444753;
     color: white;
@@ -55,7 +55,7 @@ aside {
     margin: auto 0;
 }
 
-.btn-ctnr button:hover {
+#logout:hover {
     background-color: skyblue;
     cursor: pointer;
 }
