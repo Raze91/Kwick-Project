@@ -1,5 +1,6 @@
+const base_url = "http://greenvelvet.alwaysdata.net/kwick/api"
 $.ajax({
-    url: `http://greenvelvet.alwaysdata.net/kwick/api/talk/list/${sessionStorage.getItem("token")}/0`,
+    url: `${base_url}/talk/list/${sessionStorage.getItem("token")}/0`,
     dataType: "json"
 })
     .then((res) => {
@@ -16,7 +17,7 @@ $.ajax({
     })
 
 $.ajax({
-    url: `http://greenvelvet.alwaysdata.net/kwick/api/user/logged/${sessionStorage.getItem("token")}`,
+    url: `${base_url}/user/logged/${sessionStorage.getItem("token")}`,
     dataType: "json"
 })
     .then((res) => {
@@ -33,17 +34,37 @@ $("#logout").on("click", function (e) {
     e.preventDefault();
 
     $.ajax({
-        url: `http://greenvelvet.alwaysdata.net/kwick/api/logout/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}`,
+        url: `${base_url}/logout/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}`,
         dataType: "json"
     })
         .then((res) => {
             console.log(res);
 
-            if(res.result.status === "failure") {
+            if (res.result.status === "failure") {
                 alert(res.result.message);
             } else {
                 window.location.href = "../index.html";
             }
         })
 
+})
+
+$("form").on("submit", function (e) {
+    e.preventDefault();
+
+    const message = $("#message").val();
+
+    console.log(message);
+
+    $.ajax({
+        url: `${base_url}/say/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}/${message}`,
+        dataType: "json"
+    })
+        .then((res) => {
+            console.log(res);
+
+            if (res.result.status === "failure") {
+                alert(res.result.message);
+            }
+        })
 })
