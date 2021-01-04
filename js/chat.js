@@ -8,7 +8,7 @@ $.ajax({
         res.result.talk.map((msg) => {
             $("section").append(`
             <div>
-                <p>${msg.user_name}</p>
+                <p class="small">${msg.user_name}</p>
                 <p>${msg.content}</p>
             </div>`
             )
