@@ -81,3 +81,7 @@ $("form").on("submit", function (e) {
             window.location.reload();
         })
 })
+
+$("#accordeon").on("click", function(e) {
+    $("aside").toggleClass("opened");
+})
