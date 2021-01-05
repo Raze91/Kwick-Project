@@ -1,11 +1,11 @@
 $("form").on("submit", function (e) {
     e.preventDefault();
 
-    const user = $("#user").val();
-    const password = $("#password").val();
+    const $user = $("#user");
+    const $password = $("#password");
 
     $.ajax({
-        url: `http://greenvelvet.alwaysdata.net/kwick/api/login/${user}/${password}`,
+        url: `http://greenvelvet.alwaysdata.net/kwick/api/login/${$user.val()}/${$password.val()}`,
         dataType: "json"
     })
         .then((res) => {

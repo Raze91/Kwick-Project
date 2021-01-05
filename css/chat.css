@@ -22,6 +22,7 @@ section div {
 section div h2, section div p {
     margin: 10px;
     align-items: center;
+    word-break: break-word;
 }
 
 .small {
@@ -60,7 +61,7 @@ aside {
     cursor: pointer;
 }
 
-aside p {
+aside p , aside h1{
     width: 80%;
     color: white;
     margin: 20px auto;
