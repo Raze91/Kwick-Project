@@ -66,7 +66,7 @@ $("form").on("submit", function (e) {
     console.log(message);
 
     $.ajax({
-        url: `${base_url}/say/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}/${message}`,
+        url: `${base_url}/say/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}/${encodeURI(message)}`,
         dataType: "json"
     })
         .then((res) => {
