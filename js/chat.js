@@ -17,11 +17,11 @@ $.ajax({
             const HMS = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
 
             $("section").append(`
-            <div>
+            <div class="${user_data.user_name === msg.user_name ? "currentUser" : "notUser"}">
                 <p class="small">${msg.user_name}</p>
                 <p>${msg.content}</p>
             </div>
-            <p class="timestamp"><small>${DMY} ${HMS}</small></p>
+            <p class="timestamp ${user_data.user_name === msg.user_name ? "currentUserT" : "notUserT"}"><small>${DMY} ${HMS}</small></p>
                 `
             )
         })
