@@ -53,10 +53,11 @@ aside {
     background-color: #444753;
     color: white;
     border: none;
+    border-radius: 10px;
     margin: auto 0;
 }
 #logout:hover {
-    background-color: skyblue;
+    background-color: cornflowerblue;
     cursor: pointer;
 }
 aside p , aside h1{

@@ -15,10 +15,18 @@ $("form").on("submit", function (e) {
                 alert(res.result.message);
             } else {
 
-                sessionStorage.setItem("id", res.result.id);
-                sessionStorage.setItem("token", res.result.token);
+                const user_data = {
+                    id: res.result.id,
+                    token: res.result.token,
+                    user_name: $user.val()
+                }
+
+                sessionStorage.setItem("user_data", JSON.stringify(user_data));
 
                 window.location.replace("chat.html")
             }
+        })
+        .catch((err) => {
+            alert(err);
         })
 })

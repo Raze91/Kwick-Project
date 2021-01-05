@@ -1,7 +1,8 @@
 const base_url = "http://greenvelvet.alwaysdata.net/kwick/api"
+const user_data = JSON.parse(sessionStorage.user_data);
 
 $.ajax({
-    url: `${base_url}/talk/list/${sessionStorage.getItem("token")}/0`,
+    url: `${base_url}/talk/list/${user_data.token}/0`,
     dataType: "json"
 })
     .then((res) => {
@@ -13,7 +14,7 @@ $.ajax({
 
             const DMY = `${('0' + date.getDate()).slice(-2)}/${('0' + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`;
 
-            const HMS = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`
+            const HMS = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
 
             $("section").append(`
             <div>
@@ -27,7 +28,7 @@ $.ajax({
     })
 
 $.ajax({
-    url: `${base_url}/user/logged/${sessionStorage.getItem("token")}`,
+    url: `${base_url}/user/logged/${user_data.token}`,
     dataType: "json"
 })
     .then((res) => {
@@ -44,7 +45,7 @@ $("#logout").on("click", function (e) {
     e.preventDefault();
 
     $.ajax({
-        url: `${base_url}/logout/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}`,
+        url: `${base_url}/logout/${user_data.token}/${user_data.id}`,
         dataType: "json"
     })
         .then((res) => {
@@ -67,7 +68,7 @@ $("form").on("submit", function (e) {
     console.log(message);
 
     $.ajax({
-        url: `${base_url}/say/${sessionStorage.getItem("token")}/${sessionStorage.getItem("id")}/${encodeURI(message)}`,
+        url: `${base_url}/say/${user_data.token}/${user_data.id}/${encodeURI(message)}`,
         dataType: "json"
     })
         .then((res) => {
