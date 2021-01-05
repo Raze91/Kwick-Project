@@ -108,7 +108,7 @@ aside p , aside h1{
     main {
         flex-direction: column;
     }
-    aside , section{
+    .opened , section{
         width: 100%;
         margin: 0;
     }
