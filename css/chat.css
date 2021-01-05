@@ -84,3 +84,15 @@ aside p , aside h1{
     border: 1px solid black;
     box-sizing: border-box;
 }
+
+@media (max-width: 650px) {
+    main {
+        flex-direction: column;
+    }
+    aside , section{
+        width: 100%;
+    }
+    #message , #submit{
+        width: 95%
+    }
+}
