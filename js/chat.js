@@ -18,9 +18,10 @@ $.ajax({
             $("section").append(`
             <div>
                 <p class="small">${msg.user_name}</p>
-                <p>${DMY} ${HMS}</p>
                 <p>${msg.content}</p>
-            </div>`
+            </div>
+            <p class="timestamp"><small>${DMY} ${HMS}</small></p>
+                `
             )
         })
     })
@@ -75,5 +76,7 @@ $("form").on("submit", function (e) {
             if (res.result.status === "failure") {
                 alert(res.result.message);
             }
+
+            window.location.reload();
         })
 })

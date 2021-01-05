@@ -1,39 +1,41 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
 }
-
 main {
     display: flex;
     justify-content: space-between;
 }
-
 section {
-    width: 80%
+    width: 80%;
+    padding: 10px;
 }
-
 section div {
-    border: 1px solid black;
-    background-color: skyblue;
-    border-radius: 5px;
-    margin: 10px;
+    background-color: cornflowerblue;
+    border-radius: 23px 23px 23px 0;
+    margin: 3px 0;
     width: fit-content;
+    padding: 16px 19px;
+    color: white;
 }
-
 section div h2, section div p {
     margin: 10px;
     align-items: center;
     word-break: break-word;
 }
-
 .small {
     font-size: 12px;
     font-weight: bold;
 }
-
+.timestamp {
+    margin: 0 5px;
+    margin-bottom: 24px;
+}
 section div h2 {
     text-align: right;
 }
-
 aside {
     width: 25%;
     border: 1px solid black;
@@ -41,13 +43,11 @@ aside {
     background-color: #444753;
     margin: 10px 0;
 }
-
 .ctnr {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-
 #logout {
     height: 40px;
     background-color: #444753;
@@ -55,19 +55,19 @@ aside {
     border: none;
     margin: auto 0;
 }
-
 #logout:hover {
     background-color: skyblue;
     cursor: pointer;
 }
-
 aside p , aside h1{
     width: 80%;
     color: white;
     margin: 20px auto;
     font-size: 20px;
 }
-
+.btn-ctnr {
+    text-align: center;
+}
 #message {
     padding: 12px 20px;
     margin: 10px;
@@ -76,7 +76,6 @@ aside p , aside h1{
     box-sizing: border-box;
     width: 80%;
 }
-
 #submit {
     padding: 12px 20px;
     margin: 10px;
@@ -84,15 +83,19 @@ aside p , aside h1{
     border: 1px solid black;
     box-sizing: border-box;
 }
-
 @media (max-width: 650px) {
     main {
         flex-direction: column;
     }
     aside , section{
         width: 100%;
+        margin: 0;
+    }
+    section {
+        padding: 0;
     }
     #message , #submit{
-        width: 95%
+        width: 100%;
+        margin: 0;
     }
 }
