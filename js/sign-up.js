@@ -14,7 +14,7 @@ $("form").on("submit", function (e) {
             if(res.result.status === "failure") {
                 alert(res.result.message);
             } else {
-                window.location.replace("pages/login.html")
+                window.location.href = "login.html"
             }
         })
 })
