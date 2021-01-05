@@ -1,3 +1,4 @@
+/**** Arrière plan bleu sur la page ****/
 body{
     background-color: steelblue;
     width: 100%;
@@ -8,7 +9,7 @@ body{
     align-items: center;
     margin: 0;
 }
-/* Formulaire */
+/* Formulaire d'inscripion*/
 form {
     width: 100%;
     max-width: 33.3%;
@@ -19,7 +20,7 @@ form {
     flex-direction: column;
 }
 
-/* Inputs */
+/* Champs Nom d'utilisateur et Mot de passe */
 #user, #password {
     padding: 12px 20px;
     margin: 8px 0;
@@ -28,7 +29,7 @@ form {
     box-sizing: border-box;
 }
 
-/* Bouton Sign Up */
+/* Bouton de validation Sign Up */
 #submit {
     background-color: cornflowerblue;
     color: white;
@@ -38,10 +39,12 @@ form {
     cursor: pointer;
     width: 100%;
 }
+/* Survol du bouton de validation Sign Up*/
 #submit:hover {
     background-color: steelblue;
 }
 
+/* Responsive */
 @media (max-width: 674px) {
     form {
         max-width: 80%;

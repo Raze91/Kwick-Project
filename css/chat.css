@@ -4,13 +4,14 @@
 body {
     margin: 0;
 }
+/**** Arrière plan bleu et espacement sut la barre de navigation ****/
 header {
     background-color: steelblue;
     display: flex;
     justify-content: space-around;
     color: white;
 }
-
+/**** Arrière plan bleu et couleur de texte blanc sur les boutons de déconnexion et d'affichage des utilisateurs connectés ****/
 #logout, #accordeon {
     height: 50px;
     background-color: steelblue;
@@ -18,55 +19,62 @@ header {
     border: none;
     margin: auto 0;
 }
+/**** Couleur bleu clair sur le survol des bouttons de déconnexion et d'affichage des utilisateurs connectés ****/
 #logout:hover,#accordeon:hover {
     cursor: pointer;
     color: cornflowerblue;
 }
 main {
     display: flex;
-    justify-content: space-between;
 }
+/**** Partie contenant les messages ****/
 section {
     width: 100%;
     padding: 10px;
 }
+/**** Bulles des messages ****/
 section div {
     margin: 3px 0;
     width: fit-content;
     padding: 16px 19px;
     color: white;
 }
-section div h2, section div p {
+/**** Contenu des messages ****/
+section div p {
     margin: 10px;
     align-items: center;
     word-break: break-word;
 }
+/**** Arrière plan foncé sur les messages des autres utilisateurs ****/
 .notUser {
     border-radius: 23px 23px 23px 0;
     background-color: #444753;
 }
+/**** Dates et heures des messages ****/
+.timestamp {
+    margin: 0 5px;
+    margin-bottom: 24px;
+}
+/**** Ajoute un arrière plan bleu clair et place sur la droite les messages de l'utilisateur ****/
 .currentUser {
     margin-left: auto;
     border-radius: 23px 23px 0 23px;
     background-color: cornflowerblue;
 }
+/**** ALigne sur la droite les dates et heures des messages de l'utilisateur ****/
 .currentUserT {
     text-align: right;
 }
+/**** Nom des utilisateurs ****/
 .small {
     font-size: 12px;
     font-weight: bold;
 }
-.timestamp {
-    margin: 0 5px;
-    margin-bottom: 24px;
-}
-section div h2 {
-    text-align: right;
-}
+/**** Cache la partie affichant les utilisateurs connectés ****/
 aside {
     display: none;
 }
+/**** Affiche la partie affichant les utilisateurs connectés ****/
 .opened {
     display: block;
     width: 25%;
@@ -75,20 +83,20 @@ aside {
     background-color: #444753;
     margin: 10px 0;
 }
+/**** Partie dans laquel est injecté les utilisateurs connectés ****/
 .ctnr {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
+/**** Couleur blanche et taille de texte des utilisateurs connectés ****/
 aside p , aside h1{
     width: 80%;
     color: white;
     margin: 20px auto;
     font-size: 20px;
 }
-.btn-ctnr {
-    text-align: center;
-}
+/**** Champs d'écriture du message de l'utilisateur  ****/
 #message {
     padding: 12px 20px;
     margin: 10px;
@@ -97,6 +105,7 @@ aside p , aside h1{
     box-sizing: border-box;
     width: 80%;
 }
+/**** Bouton de validation du formulaire d'écriture de message ****/
 #submit {
     padding: 12px 20px;
     margin: 10px;
@@ -104,6 +113,7 @@ aside p , aside h1{
     border: 1px solid black;
     box-sizing: border-box;
 }
+/**** Responsive ****/
 @media (max-width: 650px) {
     main {
         flex-direction: column;
