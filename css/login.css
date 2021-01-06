@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&family=Roboto:wght@700&display=swap');
+
 /**** Arrière plan bleu sur la page ****/
 body{
     background-color: steelblue;
@@ -8,6 +10,16 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0;
+}
+body p ,body label, body input, body a{
+    font-family: "Quicksand";
+}
+
+body label, body input, body a {
+    font-weight: bold;
+}
+body h1 {
+    font-family: 'Roboto';
 }
 /* Formulaire de connexion */
 form {
@@ -42,6 +54,13 @@ form {
 /* Survol du bouton de validation LOGIN */
 #submit:hover {
     background-color: steelblue;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 /* Message d'erreur */
 .error {

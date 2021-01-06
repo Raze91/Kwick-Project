@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&family=Roboto:wght@700&display=swap');
+
 /**** Arrière plan bleu sur la page ****/
 body{
     background-color: steelblue;
@@ -8,6 +10,12 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0;
+}
+body p ,body a {
+    font-family: "Quicksand";
+}
+body h1 {
+    font-family: 'Roboto';
 }
 /**** Carte au centre de l'écran à l'arrivée sur le site ****/
 section {
@@ -30,6 +38,7 @@ a {
     cursor: pointer;
     width: 50%;
     text-decoration: none;
+    font-weight: bold;
 }
 /**** Survol des boutons de redirection vers les pages d'inscription et de connexion ****/
 a:hover {

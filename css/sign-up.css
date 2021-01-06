@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&family=Roboto:wght@700&display=swap');
+
 /**** Arrière plan bleu sur la page ****/
 body{
     background-color: steelblue;
@@ -9,7 +11,17 @@ body{
     align-items: center;
     margin: 0;
 }
-/* Formulaire d'inscripion*/
+body p ,body label, body input, body a{
+    font-family: "Quicksand";
+}
+
+body label, body input, body a {
+    font-weight: bold;
+}
+body h1 {
+    font-family: 'Roboto';
+}
+/* Formulaire de connexion */
 form {
     width: 100%;
     max-width: 33.3%;
@@ -29,7 +41,7 @@ form {
     box-sizing: border-box;
 }
 
-/* Bouton de validation Sign Up */
+/* Bouton de validation LOGIN */
 #submit {
     background-color: cornflowerblue;
     color: white;
@@ -39,9 +51,16 @@ form {
     cursor: pointer;
     width: 100%;
 }
-/* Survol du bouton de validation Sign Up*/
+/* Survol du bouton de validation LOGIN */
 #submit:hover {
     background-color: steelblue;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 /* Message d'erreur */
 .error {
