@@ -56,7 +56,6 @@ $("#logout").on("click", function (e) {
             sessionStorage.removeItem("user_data");
             window.location.href = "../index.html";
         })
-
 })
 // Event de validation de formulaire
 $("form").on("submit", function (e) {
@@ -64,15 +63,18 @@ $("form").on("submit", function (e) {
     e.preventDefault();
     // Contenu du champ message de l'utilisateur
     const message = $("#message").val();
-    // Requête d'envoie de message de l'utilisateur
-    $.ajax({
-        url: `${base_url}/say/${user_data.token}/${user_data.id}/${encodeURI(message)}`,
-        dataType: "json"
-    })
-        .then((res) => {
-            // Recharge la page afin d'afficher le message envoyé
-            window.location.reload();
+    // 
+    if (message.trim().length) {
+        // Requête d'envoie de message de l'utilisateur
+        $.ajax({
+            url: `${base_url}/say/${user_data.token}/${user_data.id}/${encodeURI(message)}`,
+            dataType: "json"
         })
+            .then((res) => {
+                // Recharge la page afin d'afficher le message envoyé
+                window.location.reload();
+            })
+    }
 })
 // Event de click sur le bouton d'affichage des utilisateurs connectés
 $("#accordeon").on("click", function () {
