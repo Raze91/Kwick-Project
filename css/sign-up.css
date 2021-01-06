@@ -43,7 +43,7 @@ form {
 #submit:hover {
     background-color: steelblue;
 }
-
+/* Message d'erreur */
 .error {
     background-color: red;
     color: white;

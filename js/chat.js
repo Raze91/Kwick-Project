@@ -8,16 +8,13 @@ $.ajax({
     dataType: "json"
 })
     .then((res) => {
-
         // Parcourt chaque message 
         res.result.talk.map((msg) => {
-
             const date = new Date(msg.timestamp * 1000);
             // Jour / Mois / Année
             const DMY = `${('0' + date.getDate()).slice(-2)}/${('0' + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`;
             // Heure / Minute / Secondes
             const HMS = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
-
             // Affiche les messages
             $("section").append(`
             <div class="${user_data.user_name === msg.user_name ? "currentUser" : "notUser"}">
@@ -28,6 +25,10 @@ $.ajax({
                 `
             )
         })
+    })
+    // Redirige vers la page d'accueil en cas d'erreur
+    .catch(() => {
+        window.location.href = "../index.html"
     })
 // Requête de récupération des utilisateurs connectés 
 $.ajax({
@@ -50,13 +51,9 @@ $("#logout").on("click", function (e) {
         dataType: "json"
     })
         .then((res) => {
-            // Affiche un message d'erreur en cas d'échec de l'api
-            if (res.result.status === "failure") {
-                alert(res.result.message);
             // Redirige vers la page d'accueil
-            } else {
-                window.location.href = "../index.html";
-            }
+            sessionStorage.removeItem("user_data");
+            window.location.href = "../index.html";
         })
 
 })
@@ -64,20 +61,14 @@ $("#logout").on("click", function (e) {
 $("form").on("submit", function (e) {
     // Empêche le rechargement de la page
     e.preventDefault();
-
     // Contenu du champ message de l'utilisateur
     const message = $("#message").val();
-
     // Requête d'envoie de message de l'utilisateur
     $.ajax({
         url: `${base_url}/say/${user_data.token}/${user_data.id}/${encodeURI(message)}`,
         dataType: "json"
     })
         .then((res) => {
-            // Affiche un message d'erreur en cas d'échec de l'api
-            if (res.result.status === "failure") {
-                alert(res.result.message);
-            }
             // Recharge la page afin d'afficher le message envoyé
             window.location.reload();
         })
@@ -86,4 +77,4 @@ $("form").on("submit", function (e) {
 $("#accordeon").on("click", function () {
     // Affiche / Cache la partie de la page contenant la liste des utilisateurs
     $("aside").toggleClass("opened");
-})
+});

@@ -30,7 +30,9 @@ main {
 /**** Partie contenant les messages ****/
 section {
     width: 100%;
+    height: 80vh;
     padding: 10px;
+    overflow: scroll;
 }
 /**** Bulles des messages ****/
 section div {
@@ -124,6 +126,7 @@ aside p , aside h1{
     }
     section {
         padding: 0;
+        height: fit-content;
     }
     #message , #submit{
         width: 100%;
