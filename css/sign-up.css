@@ -14,7 +14,6 @@ body{
 body p ,body label, body input, body a{
     font-family: "Quicksand";
 }
-
 body label, body input, body a {
     font-weight: bold;
 }
@@ -31,7 +30,6 @@ form {
     display: flex;
     flex-direction: column;
 }
-
 /* Champs Nom d'utilisateur et Mot de passe */
 #user, #password {
     padding: 12px 20px;
@@ -40,7 +38,6 @@ form {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
 /* Bouton de validation LOGIN */
 #submit {
     background-color: cornflowerblue;
@@ -69,7 +66,6 @@ a:hover {
     text-align: center;
     padding: 5px;
 }
-
 /* Responsive */
 @media (max-width: 674px) {
     form {

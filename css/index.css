@@ -44,7 +44,6 @@ a {
 a:hover {
     background-color: steelblue;
 }
-
 /**** Responsive ****/
 @media (max-width: 674px) {
     section {

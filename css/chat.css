@@ -45,6 +45,16 @@ section {
     height: 80vh;
     padding: 10px;
     overflow: scroll;
+    overflow-x: hidden;
+}
+/* Cache la barre de scroll pour Chrome, Safari et Opera */
+section::-webkit-scrollbar {
+    display: none;
+}
+/* Cache la barre de scroll pour IE, Edge et Firefox */
+section {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 /**** Bulles des messages ****/
 section div {
@@ -62,7 +72,8 @@ section div p {
 /**** Arrière plan foncé sur les messages des autres utilisateurs ****/
 .notUser {
     border-radius: 23px 23px 23px 0;
-    background-color: #444753;
+    background-color: rgb(228, 228, 228);
+    color: black;
 }
 /**** Dates et heures des messages ****/
 .timestamp {
@@ -92,10 +103,20 @@ aside {
 .opened {
     display: block;
     width: 25%;
-    border: 1px solid black;
     border-radius: 5px;
-    background-color: #444753;
-    margin: 10px 0;
+    background-color: rgb(228, 228, 228);
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 80vh;
+}
+/* Cache la barre de scroll pour Chrome, Safari et Opera */
+.opened::-webkit-scrollbar {
+    display: none;
+}
+/* Cache la barre de scroll pour IE, Edge et Firefox */
+.opened {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 /**** Partie dans laquel est injecté les utilisateurs connectés ****/
 .ctnr {
@@ -106,7 +127,7 @@ aside {
 /**** Couleur blanche et taille de texte des utilisateurs connectés ****/
 aside p , aside h1{
     width: 80%;
-    color: white;
+    color: black;
     margin: 20px auto;
     font-size: 20px;
 }
