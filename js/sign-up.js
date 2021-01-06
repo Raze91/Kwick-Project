@@ -20,6 +20,7 @@ $("form").on("submit", function (e) {
                 window.location.href = "login.html"
             }
         })
+        // Affiche un message en cas d'erreur
         .catch((err) => {
             $("#user_name").prepend(`Oups... Une erreur est survenue.`)
         })
