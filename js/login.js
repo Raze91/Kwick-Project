@@ -14,7 +14,9 @@ $("form").on("submit", function (e) {
 
             // Affiche un message d'erreur en cas d'échec de l'api
             if (res.result.status === "failure") {
-                $("#user_name").prepend(`<p class="error">Le nom d'utilisateur ou le mot de passe n'est pas correct</p>`);
+                if($(".error").length === 0) {
+                    $("#user_name").prepend(`<p class="error">Le nom d'utilisateur ou le mot de passe n'est pas correct</p>`);
+                }
             } else {
 
                 // Données de l'utilisateur
@@ -33,6 +35,6 @@ $("form").on("submit", function (e) {
         })
         // Affiche un message d'erreur en cas de problème indépendant de l'api
         .catch((err) => {
-            $("#user_name").prepend(`Oups... Une erreur est survenue.`)
+            $("#user_name").prepend(`<p class="error">Oups... Une erreur est survenue.</p>`)
         })
 })
