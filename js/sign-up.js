@@ -17,7 +17,18 @@ $("form").on("submit", function (e) {
                 $("#user_name").prepend(`<p class="error">Ce nom d'utilisateur est déjà utilisé ...</p>`);
             // Redirige vers la page de connexion en cas de réussite
             } else {
-                window.location.href = "login.html"
+                // Données de l'utilisateur
+                const user_data = {
+                    id: res.result.id,
+                    token: res.result.token,
+                    user_name: $user.val()
+                }
+
+                // Stocke les données de l'utilisateur
+                sessionStorage.setItem("user_data", JSON.stringify(user_data));
+
+                // Redirige vers la page de chat
+                window.location.replace("chat.html")
             }
         })
         // Affiche un message en cas d'erreur
