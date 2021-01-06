@@ -7,7 +7,7 @@ $("form").on("submit", function (e) {
 
     // Requête d'inscription de l'utilisateur
     $.ajax({
-        url: `http://greenvelvet.alwaysdata.net/kwick/api/signup/${$user.val()}/${$password.val()}`,
+        url: `https://greenvelvet.alwaysdata.net/kwick/api/signup/${$user.val()}/${$password.val()}`,
         dataType: "json"
     })
         .then((res) => {

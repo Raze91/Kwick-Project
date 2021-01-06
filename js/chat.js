@@ -1,4 +1,4 @@
-const base_url = "http://greenvelvet.alwaysdata.net/kwick/api"
+const base_url = "https://greenvelvet.alwaysdata.net/kwick/api"
 // Données de l'utilisateur stockées dans le sessionStorage
 const user_data = JSON.parse(sessionStorage.user_data);
 
