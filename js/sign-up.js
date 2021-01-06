@@ -14,10 +14,13 @@ $("form").on("submit", function (e) {
 
             // Affiche un message d'erreur en cas d'échec de l'api
             if(res.result.status === "failure") {
-                alert(res.result.message);
+                $("#user_name").prepend(`<p class="error">Ce nom d'utilisateur est déjà utilisé ...</p>`);
             // Redirige vers la page de connexion en cas de réussite
             } else {
                 window.location.href = "login.html"
             }
+        })
+        .catch((err) => {
+            $("#user_name").prepend(`Oups... Une erreur est survenue.`)
         })
 })

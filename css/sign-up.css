@@ -44,6 +44,13 @@ form {
     background-color: steelblue;
 }
 
+.error {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
 /* Responsive */
 @media (max-width: 674px) {
     form {
