@@ -25,6 +25,7 @@ $.ajax({
                 `
             )
         })
+        $("section").scrollTop($("section")[0].scrollHeight);
     })
     // Redirige vers la page d'accueil en cas d'erreur
     .catch(() => {
