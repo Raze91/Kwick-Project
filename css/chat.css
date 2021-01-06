@@ -59,6 +59,8 @@ section {
 /**** Bulles des messages ****/
 section div {
     margin: 3px 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 16px 19px;
     color: white;
@@ -159,6 +161,8 @@ aside p , aside h1{
     }
     section {
         padding: 0;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
     }
     #message , #submit{
