@@ -124,7 +124,7 @@ aside {
     flex: 1;
 }
 /**** Couleur blanche et taille de texte des utilisateurs connectés ****/
-aside p , aside h1{
+aside p , aside h2{
     width: 80%;
     color: black;
     margin: 20px auto;
