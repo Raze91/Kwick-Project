@@ -46,15 +46,12 @@ section {
     padding: 10px;
     overflow: scroll;
     overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 /* Cache la barre de scroll pour Chrome, Safari et Opera */
 section::-webkit-scrollbar {
     display: none;
-}
-/* Cache la barre de scroll pour IE, Edge et Firefox */
-section {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
 }
 /**** Bulles des messages ****/
 section div {
@@ -158,12 +155,6 @@ aside p , aside h1{
     .opened , section{
         width: 100%;
         margin: 0;
-    }
-    section {
-        padding: 0;
-        height: -webkit-fit-content;
-        height: -moz-fit-content;
-        height: fit-content;
     }
     #message , #submit{
         width: 100%;
