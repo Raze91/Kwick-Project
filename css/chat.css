@@ -5,12 +5,10 @@
 }
 body {
     margin: 0;
-    
 }
 body p ,body label, body input{
     font-family: "Quicksand";
 }
-
 body label, body input {
     font-weight: bold;
 }
@@ -102,12 +100,12 @@ aside {
 /**** Affiche la partie affichant les utilisateurs connectés ****/
 .opened {
     display: block;
-    width: 25%;
+    width: fit-content;
+    height: fit-content;
     border-radius: 5px;
     background-color: rgb(228, 228, 228);
     overflow: scroll;
     overflow-x: hidden;
-    height: 80vh;
 }
 /* Cache la barre de scroll pour Chrome, Safari et Opera */
 .opened::-webkit-scrollbar {
@@ -153,7 +151,7 @@ aside p , aside h2{
     main {
         flex-direction: column;
     }
-    .opened , section{
+    .opened{
         width: 100%;
         margin: 0;
     }
