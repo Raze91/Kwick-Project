@@ -161,7 +161,10 @@ aside p , aside h2{
         width: 100%;
         margin: 0;
     }
-    section {
-        height: 68vh;
+    header h1 {
+        margin: auto 0;
+    }
+    .timestamp {
+        margin-bottom: 0;
     }
 }
