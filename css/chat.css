@@ -5,6 +5,7 @@
 }
 body {
     margin: 0;
+    
 }
 body p ,body label, body input{
     font-family: "Quicksand";
@@ -91,7 +92,7 @@ section div p {
 }
 /**** Nom des utilisateurs ****/
 .small {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
 }
 /**** Cache la partie affichant les utilisateurs connectés ****/
@@ -159,5 +160,8 @@ aside p , aside h2{
     #message , #submit{
         width: 100%;
         margin: 0;
+    }
+    section {
+        height: 68vh;
     }
 }
