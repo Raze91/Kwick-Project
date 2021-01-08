@@ -73,6 +73,11 @@ section div p {
     align-items: center;
     word-break: break-word;
 }
+.notAuthorized {
+    color: black;
+    text-align: center;
+    margin: 100px auto;
+}
 /**** Arrière plan foncé sur les messages des autres utilisateurs ****/
 .notUser {
     border-radius: 23px 23px 23px 0;

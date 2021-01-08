@@ -1,6 +1,18 @@
 const base_url = "https://greenvelvet.alwaysdata.net/kwick/api"
 // Données de l'utilisateur stockées dans le sessionStorage
-const user_data = JSON.parse(sessionStorage.user_data);
+let user_data;
+
+if (sessionStorage.user_data) {
+    user_data = JSON.parse(sessionStorage.user_data);
+} else {
+    $("section").append(`<div class="notAuthorized">
+        <h2>Vous n'êtes pas autorisé à accéder à cette page.</h2>
+        <p>Retour à la page d'accueil...</p>
+    </div>`)
+    setTimeout(() => {
+        window.location.href = "../index.html"
+    }, 3000);
+}
 
 // Requête de récupération des messages
 $.ajax({
@@ -31,6 +43,7 @@ $.ajax({
     .catch(() => {
         window.location.href = "../index.html"
     })
+
 // Requête de récupération des utilisateurs connectés 
 $.ajax({
     url: `${base_url}/user/logged/${user_data.token}`,
@@ -38,10 +51,10 @@ $.ajax({
 })
     .then((res) => {
         // Parcourt la liste des utilisateurs et les affiches
-        res.result.user.map((user) => {
-            $(".ctnr").append(`<p>${user}</p>`)
-        })
+        res.result.user.map((user) => $(".ctnr").append(`<p>${user}</p>`))
     })
+    .catch(error => console.error(error))
+
 // Event de click sur le bouton de déconnexion
 $("#logout").on("click", function (e) {
     // Empêche le rechargement de la page
@@ -56,6 +69,7 @@ $("#logout").on("click", function (e) {
             sessionStorage.removeItem("user_data");
             window.location.href = "../index.html";
         })
+        .catch(error => console.error(error))
 })
 // Event de validation de formulaire
 $("form").on("submit", function (e) {
@@ -74,6 +88,7 @@ $("form").on("submit", function (e) {
                 // Recharge la page afin d'afficher le message envoyé
                 window.location.reload();
             })
+            .catch(error => console.log(error))
     }
 })
 // Event de click sur le bouton d'affichage des utilisateurs connectés
