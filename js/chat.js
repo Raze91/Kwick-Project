@@ -14,7 +14,7 @@ $.ajax({
             // Jour / Mois / Année
             const DMY = `${('0' + date.getDate()).slice(-2)}/${('0' + (date.getMonth() + 1)).slice(-2)}/${date.getFullYear()}`;
             // Heure / Minute / Secondes
-            const HMS = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
+            const HMS = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}`;
             // Affiche les messages
             $("section").append(`
             <div class="${user_data.user_name === msg.user_name ? "currentUser" : "notUser"}">

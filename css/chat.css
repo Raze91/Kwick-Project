@@ -18,9 +18,12 @@ body h1 {
 /**** Arrière plan bleu et espacement sut la barre de navigation ****/
 header {
     background-color: steelblue;
+    color: white;
+}
+header nav {
     display: flex;
     justify-content: space-around;
-    color: white;
+    width: 100%;
 }
 /**** Arrière plan bleu et couleur de texte blanc sur les boutons de déconnexion et d'affichage des utilisateurs connectés ****/
 #logout, #accordeon {
@@ -101,9 +104,9 @@ aside {
 .opened {
     display: block;
     width: fit-content;
-    height: fit-content;
     border-radius: 5px;
     background-color: rgb(228, 228, 228);
+    height: 80vh;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -121,6 +124,7 @@ aside {
     display: flex;
     flex-direction: column;
     flex: 1;
+    
 }
 /**** Couleur blanche et taille de texte des utilisateurs connectés ****/
 aside p , aside h2{
@@ -161,8 +165,5 @@ aside p , aside h2{
     }
     header h1 {
         margin: auto 0;
-    }
-    .timestamp {
-        margin-bottom: 0;
     }
 }
